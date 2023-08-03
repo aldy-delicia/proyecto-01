@@ -1,0 +1,14 @@
+<div class="flex-column">
+    <h2>Nombre:</h2>
+    <p>{{user.name}}</p>
+    <h2>Correo</h2>
+    <p>{{user.email}}</p>
+    {{#if admin}}
+    <p><b>Se ha conectado como administrador</b></p>
+    {{/if}}
+    <div class="row">
+        <button class="btn btn-danger mb-2" id="logout-btn">Cerrar sesión</button>
+        <a href="/products" class="btn btn-primary mb-4">Volver a productos</a>
+    </div>
+</div>
+<script src="/js/logout.js"></script>

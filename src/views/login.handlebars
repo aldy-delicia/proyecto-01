@@ -1,0 +1,33 @@
+
+<div class="flex-column">
+    {{#if message}}
+            <h3>Contraseña cambiada correctamente</h3>
+    {{/if}}
+    <h1>Inicio de sesión</h1>
+    <form id="loginForm">
+        <label for="email">Email</label>
+        <input name="email" type="email">
+        <label for="password">Contraseña</label>
+        <input name="password" type="password">
+        <br>
+        <input class="btn btn-primary" type="submit">
+    </form>
+    <div class="gh-button">
+        <a class="btn btn-secondary btn-block" href="api/sessions/github">Entrar con GitHub</a>
+    </div>
+    <span class="flex-row" style="height:30px">
+        <p style="margin:0px">¿No tienes cuenta? </p>
+        <a style="margin:0px" href="/register">Registrate aquí</a>
+    </span>
+    <a href="/forgot-password">Olvidé mi contraseña</a>
+</div>
+<script src="/js/login.js"></script>
+<script>
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get("message");
+    if (message === "PasswordSuccessfullyUpdated") {
+      alert("¡Contraseña cambiada correctamente!");
+    }
+  };
+</script>
